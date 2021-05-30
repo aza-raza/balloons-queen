@@ -1,0 +1,553 @@
+/* ------------- General -----------*/
+:root{
+    --color-principal :#e1ae9e;  
+    --color-btn-salmon :#E4A28D;
+    --color-black:#222222;
+    
+}
+::selection{
+    background-color:#e1ae9e;
+    color: white;
+}
+/* permet d'appliquer des règles CSS à une portion du document qui a été sélectionnée par l'utilisateur (via la souris ou un autre dispositif de pointage
+*/
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+}
+h2, h3{
+    font-weight: normal;
+}
+.title h2{
+    font-size: 28px;
+}
+#scrollUp
+{
+position: fixed;
+bottom : 30px;
+right: 30px;
+background: #222;
+text-align: center;
+border-radius: 10px;
+}
+.to-top i{
+    color: white;
+    vertical-align: middle;
+    font-size: 30px;
+    padding: 8px 12px;  
+}
+/* boutons */
+.btn{
+    padding: 12px 18px;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 0;   
+}
+.btn-large{
+    padding: 16px 18px;
+    border: 1px solid var(--color-btn-salmon);
+}
+.btn-light{
+    color:var(--color-black);
+    background: #ffffff;
+}
+.btn-salmon{
+    background:var(--color-btn-salmon);
+    color: white;
+}
+.btn-ghost{
+    background: transparent;
+    color: var(--color-black);
+    border-color: lightgray;
+}
+
+/* ------------- header -----------*/
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.logo{
+    width: 280px;
+    margin: 50px 0;
+}
+.main-nav{
+    display: flex;
+}
+.main-nav .fab{
+    font-size: 16px;
+}
+.main-nav a{
+    color:var(--color-black) ;
+    font-size: 13px;
+    margin: 0 25px;
+    transition: .3 color ease-in-out;
+}
+.main-nav a:hover{
+    color:var(--color-principal);
+    transition: all .3s ease-in-out;
+}
+/* ------------- hero-header : pink -----------*/
+.banner{
+    width: 1200px;
+    height: 530px;
+    margin: 60px  auto 15px;
+    background:
+    url(../img/balloons.png) no-repeat left 100px bottom/35%,
+    url(../img/confettis.svg) no-repeat top -100px left/50% fixed,
+    #FDD0DD;
+    display: flex;
+    position: relative;
+}
+.intro{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    padding: 0 50px;
+}
+.intro h1{
+    font-size: 43px;
+    font-weight: normal;
+    color: #555555;
+    
+}
+.intro p{
+    color: #555555;
+    font-size: 20px;
+}
+/* ------------- Enquire gallery -----------*/
+.boxes{
+    display: flex;
+}
+.box{
+    display: flex;
+    width: 390px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+.box:nth-of-type(2) {
+    margin:0 10px;
+  }
+.box:hover {
+    width: 47%;
+  }
+.box1, .box2, .box3, .box4{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.box1{
+    background-image: url(../img/parties.jpg);
+}
+.box2{
+    background-image: url(../img/wedding.jpg);
+}
+.box3{
+    background-image: url(../img/heart.jpg);
+}
+.box4{
+    width:1200px;
+    height: 400px;
+    margin: 10px  auto 60px;
+    background-image: url(../img/full-balloons.jpg);
+    position: relative;
+    overflow: hidden;
+}
+.box-text{
+    width: 100%;
+    height: 0;
+    padding: 20px;
+    background-color: white;
+    position: absolute;
+    bottom:0;
+    left:0;
+    z-index: 1;
+    transition: all 0.2s linear;
+    opacity: 0;
+}
+.box:hover .box-text, .box4:hover .box-text{
+    opacity: 1;
+    width: 100%;
+    height: 230px;
+    bottom: 0;
+    left: 0;
+    filter: grayscale(0);
+}
+.box, .box4{
+    filter: grayscale(1);
+}
+.box:hover, .box4:hover{
+    filter: grayscale(0);
+}
+.box-text h3 {
+    margin-top: 7px;
+    margin-bottom: 20px;
+    font-family: Montserrat,sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.box-text p{
+    font-size: 13px;
+    line-height: 21px;
+}   
+
+/* ------------- About-me  & Services sections-----------*/
+/* --about-me */
+.about-me{
+    padding: 100px 0;
+}
+.container{
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+.col-div{
+    width: 50%;
+}
+.love{
+    background-image: url(../img/about.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 600px;
+    height: 500px;
+    position: relative;
+}
+.profile{
+    background-image: url(../img/katie-cut-out.png);
+    background-position:center;
+    background-size: cover;
+    background-repeat: repeat;
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    top: -5%;
+    right: 20px;
+    background-color: #f7f7f7;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,.22);
+    border-radius: 50%;
+}
+.profile-name{
+    position: absolute;
+    right: 10px;
+    top: 150px;
+    width: 120px;
+    background: #ffffff;
+    padding: 8px;
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+}
+.col-wrapper{
+    padding: 60px 40px 40px 70px;
+}
+.col-wrapper p{
+    margin: 0 0 21px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.block-quote{
+    margin: 0 0 10px;
+    padding: 10px 100px 10px 20px;
+    border-left: 1px solid #e1ae9e;
+    font-size: 16px;
+    line-height: 25px;
+    font-style: italic;
+    font-weight: 400;
+}
+/* --services */
+.services{
+    padding: 20px 0;
+}
+.services-image{
+    background-image: url(../img/blue.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 600px;
+    height: 500px;
+    margin-top: 40px;
+}
+.list li{
+    margin-bottom: 9px;
+    padding-left: 10px;
+    list-style-type: square;
+    font-size: 14px;
+}
+/* ------------- Prices -----------*/
+/* --prices */
+.prices{
+    padding: 100px 20px 0;
+}
+.prices .title{
+    text-align: center;
+}
+.prices .title span{
+    font-size: 14px;
+    margin: 0;
+    padding:0;
+}
+.prices .title h2{
+    margin: 15px;
+}
+/* --circle */
+.circle-image-wrapper{
+    padding: 60px 0 34px;
+    margin: 0 103px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.price-wrapper{
+    width: 200px;
+    margin-right: 8px;
+    margin-bottom: 26px;
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.price-image {
+    width: 160px;
+    height: 160px;
+}
+.price-image_nbr{
+    background-position: 50% 30%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height:100%;
+    border-radius: 100%;
+}
+.price-text{
+    text-align: center;
+    padding-top: 30px;
+}
+.price-text span{
+    font-weight: 600;
+    font-size: 14px;
+}
+.price-text small{
+    display: block;
+    padding-top: 10px;
+}
+.price-image_1{
+    background-image: url(../img/price1.jpeg);
+}
+.price-image_2{
+    background-image: url(../img/price2.jpeg);
+}
+.price-image_3{
+    background-image: url(../img/price3.jpeg);
+}
+.price-image_4{
+    background-image: url(../img/price14.jpeg);
+}
+.price-image_5{
+    background-image: url(../img/price5.jpeg);
+}
+.price-image_6{
+    background-image: url(../img/price6.jpeg);
+}
+.price-image_7{
+    background-image: url(../img/price7.jpeg);
+}
+.price-image_8{
+    background-image: url(../img/price8.jpeg);
+}
+.price-image_9{
+    background-image: url(../img/price9.jpeg);
+}
+.price-image_10{
+    background-image: url(../img/price10.jpeg);
+}
+.price-image_11{
+    background-image: url(../img/price11.jpeg);
+}
+.price-image_12{
+    background-image: url(../img/price12.jpeg);
+}
+.price-image_13{
+    background-image: url(../img/price13.jpeg);
+}
+.price-image_14{
+    background-image: url(../img/price14.jpeg);
+}
+.price-image_15{
+    background-image: url(../img/price15.jpg);
+}
+.price-image_16{
+    background-image: url(../img/price16.jpg);
+}
+/* ------------- View gallery -----------*/
+/* --sub-text */
+.sub-text{
+    text-align: center;
+}
+.sub-text p{
+    font-size: 15px;
+    line-height: 24px;
+    margin: 0 103px;
+}
+/* --Areas */
+.areas{
+    padding: 100px 0;
+}
+.areas h2{
+    text-align: center;
+    font-size: 28px;
+    padding: 0 0 11px;
+}
+.block{
+    display: flex;
+    margin-top: -20px;
+    padding: 15px 0;
+    justify-content: center;
+    text-align: center;
+}
+.text-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    margin-left: 15px;
+    font-size: 60px;
+    line-height: 30px;
+}
+.block h3{
+    font-size: 24px;
+    margin: 20px 0 10px;
+}
+.areas-sub-text{
+    text-align: center;
+    font-style: italic;
+}
+/* ------------- black section -----------*/
+.black-section{
+    background: #000;
+    width: 100%;
+    padding: 200px 0;
+    color: white;
+}
+.black-banner{
+    width: 1200px;
+    height: 300px;
+    background:
+    url(../img/confettis.svg)  top 350px left/100% fixed,
+    #FDD0DD;
+    display: flex;
+    position: relative;
+}
+.black-intro{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.black-intro h2{
+    font-size: 40px;
+}
+/* --contact */
+.contact{
+    border: 1px solid rgba(255, 255, 255, .2);
+    padding: 40px;
+    margin-top: 230px;
+}
+.contact-wrapper{
+    padding: 40px;
+    text-align: center;
+}
+.contact-wrapper h2,h3{
+    font-size: 28px;
+    margin: 6px 0;
+}
+.contact-wrapper h4{
+    font-size: 28px;
+    margin: 10px 0 0;
+    padding: 0 0 11px;
+}
+.email, .tel{
+    font-size: 14px;
+    display: inline-block;
+    padding: 0 20px;
+}
+.email i, .tel i{
+    font-size: 16px;
+    padding: 0 10px;
+}
+/* ------------- footer -----------*/
+.footer{
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    color: white;
+}
+.footer a{
+    color: white;
+    font-size: 38px;
+    font-weight: 200;
+}
+.footer-wrapper{
+    text-align: center;
+}
+.logo-footer img{
+    width: 500px;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 80px 0 180px;
+}
+.footer-wrapper h2{
+    font-size: 23px;
+    margin: 0 0 40px;
+    font-weight: 200;
+}
+.facebook, .instagram{
+    display: inline-block;
+    padding: 0 40px;
+    margin: 15px 0;
+}
+.footer-wrapper h3{
+    font-size: 21px;
+    font-weight: 200;
+}
+.bapia img{
+    width: 175px;
+    margin-top: 110px;
+}
+.footer-sub{
+    
+    padding-bottom: 13px;
+}
+.footer-sub a, .footer-sub span{
+    font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
